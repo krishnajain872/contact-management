@@ -12,12 +12,15 @@ const PaginatedList = () => {
   // Fetch data from the server
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3001/contact/", {
-        params: {
-          page: currentPage,
-          limit,
-        },
-      });
+      const response = await axios.get(
+        "https://contact-management-server-sl06.onrender.com/contact",
+        {
+          params: {
+            page: currentPage,
+            limit,
+          },
+        }
+      );
 
       setContacts(response.data.data.contacts);
       setTotalPages(response.data.data.totalPages);

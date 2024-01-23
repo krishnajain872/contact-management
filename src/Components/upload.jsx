@@ -14,7 +14,7 @@ const FileUpload = () => {
       const formData = new FormData();
       formData.append("file", file);
 
-      fetch("http://localhost:3001/contact/", {
+      fetch("https://contact-management-server-sl06.onrender.com/contact", {
         method: "POST",
         body: formData,
       })
